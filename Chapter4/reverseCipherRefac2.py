@@ -1,4 +1,4 @@
-message = "Three can keep a secret, if two of them are dead."
+message = input("Enter the message: ")
 
 trans_result = ""
 for i in reversed(range(len(message))):

@@ -1,3 +1,3 @@
-message = "Three can keep a secret, if two of them are dead."
+message = input("Enter the message: ")
 
 print(message[::-1])
