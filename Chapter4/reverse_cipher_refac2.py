@@ -1,4 +1,4 @@
-def main(msg):
+def main(msg: str) -> None:
     trans_result = ""
     for i in reversed(range(len(msg))):
         trans_result = trans_result + msg[i]
