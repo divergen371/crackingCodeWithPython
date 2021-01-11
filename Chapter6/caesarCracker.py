@@ -9,26 +9,36 @@ RED = Fore.RED
 RESET = Fore.RESET
 
 
-parser = argparse.ArgumentParser(description="encrypt and decrypt of caesar cipher.")
-parser.add_argument("-m", dest="message", type=str)
+def main():
+    parser = argparse.ArgumentParser(
+        description="encrypt and decrypt of caesar cipher."
+    )
+    parser.add_argument("-m", dest="message", type=str)
 
-args = parser.parse_args()
-message = args.message
+    args = parser.parse_args()
+    message = args.message
+    crack(message)
 
-SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?."
 
-for key in range(len(SYMBOLS)):
-    translated = ""
-    for symbol in message:
-        if symbol in SYMBOLS:
-            symbol_index = SYMBOLS.find(symbol)
-            translated_index = symbol_index - key
+def crack(message):
+    SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?."
 
-            if translated_index < 0:
-                translated_index = translated_index + len(SYMBOLS)
+    for key in range(len(SYMBOLS)):
+        translated = ""
+        for symbol in message:
+            if symbol in SYMBOLS:
+                symbol_index = SYMBOLS.find(symbol)
+                translated_index = symbol_index - key
 
-            translated = translated + SYMBOLS[translated_index]
-        else:
-            translated = translated + symbol
+                if translated_index < 0:
+                    translated_index = translated_index + len(SYMBOLS)
 
-    print(f"{GREEN}Key is {key}: {translated}{RESET}")
+                translated = translated + SYMBOLS[translated_index]
+            else:
+                translated = translated + symbol
+
+        print(f"{GREEN}Key is {key}: {translated}{RESET}")
+
+
+if __name__ == "__main__":
+    main()
