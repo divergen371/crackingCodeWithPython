@@ -7,7 +7,7 @@ def main():
         description="encrypt and decrypt of caesar cipher."
     )
     parser.add_argument("-m", dest="message", type=str)
-    parser.add_argument("-k", dest="key", help="Amount of alphabetic shift.", type=int)
+    parser.add_argument("-k", dest="key", type=int)
 
     args = parser.parse_args()
     message = args.message
