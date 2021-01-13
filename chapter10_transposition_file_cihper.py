@@ -9,7 +9,7 @@ def main():
     parser.add_argument("-i", dest="input")
     parser.add_argument("-o", dest="output")
     parser.add_argument("-k", dest="key", type=int)
-    parser.add_argument("-m", dest="mode", choices=["enc", "dec"])
+    parser.add_argument("-m", dest="mode", choices=["encrypt", "decrypt"])
     args = parser.parse_args()
     input_file = args.input
     output_file = args.output
@@ -41,8 +41,8 @@ def main():
     with open(output_file, "w") as output_file_obj:
         output_file_obj.write(translated)
 
-    print(f"Finish {mode} {input_file} {len(content)}")
-    print(f"{mode} is {output_file}")
+    print(f"Finish {mode}ing {input_file} {len(content)} characters.")
+    print(f"{mode}ed is {output_file}")
 
 
 if __name__ == "__main__":
