@@ -42,7 +42,7 @@ def main():
         output_file_obj.write(translated)
 
     print(f"Finish {mode}ing {input_file} {len(content)} characters.")
-    print(f"{mode}ed is {output_file}")
+    print(f"{mode}ed file is {output_file}")
 
 
 if __name__ == "__main__":
