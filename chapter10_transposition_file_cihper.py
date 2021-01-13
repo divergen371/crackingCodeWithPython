@@ -30,9 +30,9 @@ def main():
         content = file_obj.read()
 
     start_time = datetime.now()
-    if mode == "enc":
+    if mode == "encrypt":
         translated = encrypt_message(key_value, content)
-    elif mode == "dec":
+    elif mode == "decrypt":
         translated = decrypt_message(key_value, content)
 
     total_time = datetime.now() - start_time
