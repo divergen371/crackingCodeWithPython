@@ -6,7 +6,7 @@ import argparse
 
 def main():
     parser = argparse.ArgumentParser(
-        description="encrypt and decrypt of caesar cipher."
+        description="decrypt of transposition cipher."
     )
     parser.add_argument("-m", dest="message", type=str)
     parser.add_argument("-k", dest="key", type=int)
