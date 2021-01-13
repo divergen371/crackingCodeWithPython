@@ -1,5 +1,8 @@
-import os, sys, argparse
+import argparse
+import os
+import sys
 from datetime import datetime
+
 from Chapter7.transportion_encryption import encrypt_message
 from Chapter8.transposition_decrypt import decrypt_message
 
